@@ -30,4 +30,5 @@ func play_animation(prefix: String, dir: Vector2) -> void:
 		animated_sprite_2d.play(prefix + "_front")
 	else:
 		animated_sprite_2d.play("idle_front")
+	
 		
