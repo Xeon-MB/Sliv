@@ -227,7 +227,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_y4r1p")
 }],
 "loop": 1,
-"name": &"atacking front",
+"name": &"atacking_front",
 "speed": 7.0
 }, {
 "frames": [{
@@ -244,7 +244,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_f1ej7")
 }],
 "loop": 1,
-"name": &"atacking right",
+"name": &"atacking_right",
 "speed": 7.0
 }, {
 "frames": [{
@@ -261,7 +261,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_fulsm")
 }],
 "loop": 1,
-"name": &"atacking up",
+"name": &"atacking_up",
 "speed": 7.0
 }, {
 "frames": [{
@@ -301,7 +301,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_fjrip")
 }],
 "loop": 1,
-"name": &"idle front",
+"name": &"idle_front",
 "speed": 7.0
 }, {
 "frames": [{
@@ -324,7 +324,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_pf23h")
 }],
 "loop": 1,
-"name": &"idle right",
+"name": &"idle_right",
 "speed": 7.0
 }, {
 "frames": [{
@@ -347,7 +347,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_md1ol")
 }],
 "loop": 1,
-"name": &"idle up",
+"name": &"idle_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -370,7 +370,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_sc3ue")
 }],
 "loop": 1,
-"name": &"walking front",
+"name": &"walking_front",
 "speed": 7.0
 }, {
 "frames": [{
@@ -393,7 +393,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_cs1tg")
 }],
 "loop": 1,
-"name": &"walking right",
+"name": &"walking_right",
 "speed": 7.0
 }, {
 "frames": [{
@@ -416,7 +416,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_holxr")
 }],
 "loop": 1,
-"name": &"walking up",
+"name": &"walking_up",
 "speed": 7.0
 }]
 
@@ -430,9 +430,9 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=830411286]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_ebum8")
-animation = &"walking right"
-autoplay = "idle front"
-frame_progress = 0.50749034
+animation = &"atacking_front"
+autoplay = "idle_front"
+frame_progress = 0.4170198
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1715366476]
