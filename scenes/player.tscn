@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dcrvqqqdfq4mk" path="res://assets/images/player/Player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dvegm5lcc612v" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="AudioStream" uid="uid://bfirjaxhqw1aj" path="res://assets/images/audio/530444__mellau__whoosh-short-4.wav" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vyb7"]
 atlas = ExtResource("1_3vyb7")
@@ -226,7 +227,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y4r1p")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"atacking_front",
 "speed": 7.0
 }, {
@@ -243,7 +244,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f1ej7")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"atacking_right",
 "speed": 7.0
 }, {
@@ -260,7 +261,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fulsm")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"atacking_up",
 "speed": 7.0
 }, {
@@ -420,21 +421,24 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xvf33"]
-radius = 5.0
-height = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(15, 15)
 
 [node name="Player" type="CharacterBody2D" unique_id=1632118775]
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=830411286]
-position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_ebum8")
-animation = &"atacking_front"
+animation = &"atacking_right"
 autoplay = "idle_front"
-frame_progress = 0.4170198
-flip_h = true
+frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1715366476]
-position = Vector2(0, -9)
-shape = SubResource("CapsuleShape2D_xvf33")
+[node name="SwingSword" type="AudioStreamPlayer2D" parent="." unique_id=1688347943]
+stream = ExtResource("3_qhqgy")
+pitch_scale = 3.0
+
+[node name="hitbox" type="Area2D" parent="." unique_id=787631117]
+position = Vector2(7.5, -0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1332513042]
+shape = SubResource("RectangleShape2D_ebum8")
