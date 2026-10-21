@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://rwsqelcu2jbw" path="res://assets/images/world/Tiles/Path_Tile.png" id="6_trtic"]
 [ext_resource type="Texture2D" uid="uid://cfygchxmyi4w3" path="res://assets/images/world/Tiles/Water_Middle.png" id="7_ir15t"]
 [ext_resource type="Texture2D" uid="uid://nb7v3bmpgb5r" path="res://assets/images/world/Tiles/Water_Tile.png" id="8_ca42v"]
+[ext_resource type="PackedScene" uid="uid://bbnkkj6sus5o4" path="res://scenes/slime.tscn" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rysoc"]
 texture = ExtResource("1_0tnpc")
@@ -57,3 +58,9 @@ position = Vector2(1, -2)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=432895720]
 position = Vector2(1, -2)
 zoom = Vector2(4, 4)
+
+[node name="Slime" parent="." unique_id=1699978530 instance=ExtResource("10_vtaks")]
+position = Vector2(-56, 23)
+
+[node name="Slime2" parent="." unique_id=2118909740 instance=ExtResource("10_vtaks")]
+position = Vector2(84, 33)

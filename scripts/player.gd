@@ -13,6 +13,8 @@ func _ready() -> void:
 	update_hitbox_offset()
 
 func _physics_process(delta: float) -> void:
+	hitbox.monitoring = false
+	
 	
 	if Input.is_action_just_pressed("ataque") and not atacking:
 		ataque()
@@ -54,6 +56,7 @@ func play_animation(prefix: String, dir: Vector2) -> void:
 		
 func ataque() -> void:
 	atacking = true 
+	hitbox.monitoring = true
 
 	update_hitbox_offset()
 	swing_sword.play()
@@ -76,3 +79,9 @@ func update_hitbox_offset() -> void:
 			hitbox.position = Vector2(y, -x)
 		Vector2.DOWN:
 			hitbox.position = Vector2(-y , x)
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if atacking and body.name.begins_with("Slime"):
+		print(body.name)
+		print("hit")
