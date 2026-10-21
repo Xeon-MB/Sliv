@@ -55,12 +55,8 @@ tile_set = SubResource("TileSet_ebum8")
 [node name="Player" parent="." unique_id=1632118775 instance=ExtResource("1_uwrxv")]
 position = Vector2(1, -2)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=432895720]
-position = Vector2(1, -2)
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=432895720]
 zoom = Vector2(4, 4)
 
 [node name="Slime" parent="." unique_id=1699978530 instance=ExtResource("10_vtaks")]
-position = Vector2(-56, 23)
-
-[node name="Slime2" parent="." unique_id=2118909740 instance=ExtResource("10_vtaks")]
-position = Vector2(84, 33)
+position = Vector2(-121, 6)

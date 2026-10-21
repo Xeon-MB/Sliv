@@ -83,5 +83,5 @@ func update_hitbox_offset() -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if atacking and body.name.begins_with("Slime"):
-		print(body.name)
-		print("hit")
+		body.leva_dano(50)
+		
