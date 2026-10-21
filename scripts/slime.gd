@@ -8,6 +8,7 @@ var healthy: int = 100
 @onready var slime: CharacterBody2D = $"."
 @onready var takedamage: AudioStreamPlayer2D = $takedamage
 const KNOCKBACK_FORCE: int = 50
+@onready var health_bar: Node2D = $HealthBar
 
 func _process(delta: float) -> void:
 	if healthy <= 0:
@@ -25,7 +26,7 @@ func _ataque(delta: float) -> void:
 	
 func leva_dano(damage: int, attacker_position: Vector2) -> void:
 	healthy -= damage
-	print(healthy)
+	health_bar.update_health(healthy)
 	takedamage.play()
 	var knockback_direction = (position - attacker_position).normalized()
 	var target_position = position + knockback_direction * KNOCKBACK_FORCE
