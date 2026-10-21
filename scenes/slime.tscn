@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dvbgucu3idlhj" path="res://assets/images/enemies/Slime_Green.png" id="1_371uh"]
 [ext_resource type="Script" uid="uid://dh8jwkgsse472" path="res://scripts/slime.gd" id="1_p2gj0"]
+[ext_resource type="AudioStream" uid="uid://y14eo8e7a0o3" path="res://assets/images/audio/751338__qubodup__slime-attack-1-_1_.wav" id="3_n6pvg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2gj0"]
 atlas = ExtResource("1_371uh")
@@ -185,6 +186,10 @@ shape = SubResource("CircleShape2D_ebum8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=1635641678]
 shape = SubResource("CircleShape2D_xvf33")
+
+[node name="takedamage" type="AudioStreamPlayer2D" parent="." unique_id=2025864171]
+stream = ExtResource("3_n6pvg")
+pitch_scale = 0.75
 
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]

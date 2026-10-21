@@ -7,6 +7,7 @@ var atacking = false
 var hitbox_offset: Vector2
 @onready var hitbox: Area2D = $hitbox
 var last_direction := Vector2.DOWN
+var strenght: int = 20
 
 func _ready() -> void:
 	hitbox_offset = hitbox.position
@@ -83,5 +84,5 @@ func update_hitbox_offset() -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if atacking and body.name.begins_with("Slime"):
-		body.leva_dano(50)
+		body.leva_dano(strenght, position)
 		
