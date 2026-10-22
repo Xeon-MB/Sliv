@@ -10,7 +10,7 @@ var healthy: int = 100
 const KNOCKBACK_FORCE: int = 170
 @onready var health_bar: Node2D = $HealthBar
 var inimigos_mortos: int = 0
-@onready var label: Label = $"../Player/Label"
+@onready var label: Label = get_node_or_null("../../Player/Label")
 var knockback_velocity: Vector2 = Vector2.ZERO
 
 func _process(delta: float) -> void:
@@ -72,9 +72,11 @@ func morre() -> void:
 	animated_sprite_2d.play("die")
 	await animated_sprite_2d.animation_finished
 
-	var player = get_node("../Player")
-	player.inimigos_mortos += 1
-	player.label.text = "Pontos: " + str(player.inimigos_mortos)
+	var player = get_node_or_null("../../Player")
+	if player:
+		player.inimigos_mortos += 1
+		if player.label:
+			player.label.text = "Pontos: " + str(player.inimigos_mortos)
 
 	queue_free()
 		
