@@ -8,6 +8,8 @@ var hitbox_offset: Vector2
 @onready var hitbox: Area2D = $hitbox
 var last_direction := Vector2.DOWN
 var strenght: int = 20
+var inimigos_mortos: int = 0
+@onready var label: Label = $Label
 
 func _ready() -> void:
 	hitbox_offset = hitbox.position
