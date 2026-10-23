@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var health_player: Sprite2D = $HealthPlayer
+@onready var player: CharacterBody2D = $".."
 
 @onready var default_width: float = health_player.region_rect.size.x
 @onready var default_height: float = health_player.region_rect.size.y

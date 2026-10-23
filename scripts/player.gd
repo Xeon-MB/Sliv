@@ -7,8 +7,8 @@ var hitbox_offset: Vector2
 var last_direction := Vector2.DOWN
 var strenght: int = 20
 var inimigos_mortos: int = 0
-var max_healt: int = 100
-var healt: int = 100 
+var max_healt: int = 1000000
+var healt: int = 1000000 
 var morto: bool = false
 var sucesso: bool = false
 var total_slimes: int = 0
@@ -131,7 +131,7 @@ func morre() -> void:
 	animated_sprite_2d.play("dying")
 	await animated_sprite_2d.animation_finished
 	
-	death_screen.show_screen()
+	death_screen.show_screen(inimigos_mortos)
 	queue_free()
 	
 func fim() -> void:
