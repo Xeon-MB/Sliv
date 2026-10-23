@@ -503,7 +503,10 @@ horizontal_alignment = 1
 
 [node name="Slimes" type="Node" parent="." unique_id=224028890]
 
-[node name="Slime" parent="Slimes" unique_id=1699978530 instance=ExtResource("10_vtaks")]
+[node name="Slime12" parent="Slimes" unique_id=1699978530 instance=ExtResource("10_vtaks")]
+position = Vector2(317, 371)
+
+[node name="Slime" parent="Slimes" unique_id=142696677 instance=ExtResource("10_vtaks")]
 position = Vector2(126, 4)
 
 [node name="Slime2" parent="Slimes" unique_id=894935716 instance=ExtResource("10_vtaks")]

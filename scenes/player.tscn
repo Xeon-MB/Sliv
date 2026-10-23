@@ -232,7 +232,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"atacking_front",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -249,7 +249,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"atacking_right",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -266,7 +266,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"atacking_up",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -435,10 +435,10 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=830411286]
 sprite_frames = SubResource("SpriteFrames_ebum8")
-animation = &"dying"
+animation = &"atacking_up"
 autoplay = "idle_front"
 frame = 3
-frame_progress = 0.46857667
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1047303860]
 position = Vector2(-0.5, 6)
