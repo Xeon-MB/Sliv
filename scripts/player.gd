@@ -7,8 +7,8 @@ var hitbox_offset: Vector2
 var last_direction := Vector2.DOWN
 var strenght: int = 20
 var inimigos_mortos: int = 0
-var max_healt: int = 1000000
-var healt: int = 1000000 
+var max_healt: int = 100
+var healt: int = 100 
 var morto: bool = false
 var sucesso: bool = false
 var total_slimes: int = 0
