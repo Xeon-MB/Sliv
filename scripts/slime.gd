@@ -4,14 +4,18 @@ extends CharacterBody2D
 const SPEED: int = 50
 var target = null
 var healthy: int = 100
+const KNOCKBACK_FORCE: int = 170
+var inimigos_mortos: int = 0
+var knockback_velocity: Vector2 = Vector2.ZERO
+var strenght: int = 10
+var target_in_range: bool = false
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var slime: CharacterBody2D = $"."
 @onready var takedamage: AudioStreamPlayer2D = $takedamage
-const KNOCKBACK_FORCE: int = 170
 @onready var health_bar: Node2D = $HealthBar
-var inimigos_mortos: int = 0
 @onready var label: Label = get_node_or_null("../../Player/Label")
-var knockback_velocity: Vector2 = Vector2.ZERO
+@onready var attack_speed: Timer = $AttackSpeed
 
 func _process(delta: float) -> void:
 	if healthy <= 0:
@@ -42,6 +46,8 @@ func _ataque(delta: float) -> void:
 
 	velocity = direction * SPEED
 	move_and_slide()
+	
+	
 
 	animated_sprite_2d.play("atacking")
 
@@ -80,3 +86,19 @@ func morre() -> void:
 
 	queue_free()
 		
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		target_in_range = true
+		body.leva_dano(strenght)
+		attack_speed.start()
+
+func _on_hitbox_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		target_in_range = false
+		attack_speed.stop()
+
+func _on_attack_speed_timeout() -> void:
+	if target and target_in_range:
+		target.leva_dano(strenght)

@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dcrvqqqdfq4mk" path="res://assets/images/player/Player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dvegm5lcc612v" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="AudioStream" uid="uid://bfirjaxhqw1aj" path="res://assets/images/audio/530444__mellau__whoosh-short-4.wav" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://chj2qwgfec8pd" path="res://scripts/health_bar_player.gd" id="4_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://d2ju7h1ndhryx" path="res://assets/images/UI/LifeBarMiniUnder.png" id="5_fjrip"]
+[ext_resource type="Texture2D" uid="uid://b6tlcxx6d8888" path="res://assets/images/UI/LifeBarMiniProgress.png" id="6_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vyb7"]
 atlas = ExtResource("1_3vyb7")
@@ -278,7 +281,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a38lo")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"dying",
 "speed": 7.0
 }, {
@@ -432,9 +435,10 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=830411286]
 sprite_frames = SubResource("SpriteFrames_ebum8")
-animation = &"atacking_right"
+animation = &"dying"
 autoplay = "idle_front"
-frame = 1
+frame = 3
+frame_progress = 0.46857667
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1047303860]
 position = Vector2(-0.5, 6)
@@ -450,5 +454,20 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1332513042]
 shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="HealthBarPlayer" type="Node2D" parent="." unique_id=264773228]
+position = Vector2(-9, -15)
+script = ExtResource("4_tuyoq")
+metadata/_edit_group_ = true
+
+[node name="HealtUndoPlayer" type="Sprite2D" parent="HealthBarPlayer" unique_id=2079131403]
+texture = ExtResource("5_fjrip")
+centered = false
+
+[node name="HealthPlayer" type="Sprite2D" parent="HealthBarPlayer" unique_id=884196657]
+texture = ExtResource("6_smehm")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 18, 4)
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
