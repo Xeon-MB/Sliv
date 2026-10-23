@@ -10,6 +10,9 @@ var inimigos_mortos: int = 0
 var max_healt: int = 100
 var healt: int = 100 
 var morto: bool = false
+var sucesso: bool = false
+var total_slimes: int = 0
+
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var swing_sword: AudioStreamPlayer2D = $SwingSword
@@ -17,13 +20,23 @@ var morto: bool = false
 @onready var label: Label = $Label
 @onready var health_bar_player: Node2D = $HealthBarPlayer
 @onready var death_screen = get_tree().current_scene.get_node("TelaMorte")
+@onready var sucess_screen = get_tree().current_scene.get_node("TelaSucesso")
+@onready var slime: CharacterBody2D = $"."
+@onready var slimes_node = get_tree().current_scene.get_node("Slimes")
 
+func contar_slimes() -> int:
+	var quantidade_slimes = get_tree().get_nodes_in_group("Slimes").size()
+	return quantidade_slimes
 
 func _ready() -> void:
 	hitbox_offset = hitbox.position
 	update_hitbox_offset()
+	
+	total_slimes = slimes_node.get_child_count()
 
 func _physics_process(delta: float) -> void:
+	if sucesso:
+		return
 	if morto:
 		return
 	hitbox.monitoring = false
@@ -120,6 +133,16 @@ func morre() -> void:
 	
 	death_screen.show_screen()
 	queue_free()
+	
+func fim() -> void:
+	if sucesso:
+		return
+	
+	if inimigos_mortos >= total_slimes:
+		sucesso = true
+		velocity = Vector2.ZERO
+		hitbox.monitoring = false
 		
+		sucess_screen.show_screen()	
 
 		

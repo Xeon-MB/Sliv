@@ -72,20 +72,28 @@ func _on_sight_body_exited(body: Node2D) -> void:
 		
 		
 func morre() -> void:
+
 	set_process(false)
 	set_physics_process(false)
 
 	animated_sprite_2d.play("die")
 	await animated_sprite_2d.animation_finished
 
+
 	var player = get_node_or_null("../../Player")
+
 	if player:
 		player.inimigos_mortos += 1
-		if player.label:
-			player.label.text = "Pontos: " + str(player.inimigos_mortos)
+	
 
+	if player.label:
+		player.label.text = "Pontos: " + str(player.inimigos_mortos)
+
+	if is_instance_valid(player):
+		player.fim()
+	
 	queue_free()
-		
+	
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:

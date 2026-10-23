@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://ft7nl1aa85i7" path="res://scripts/tela_morte.gd" id="9_dinhu"]
 [ext_resource type="FontFile" uid="uid://2ogpmn1k4vah" path="res://assets/images/font/NormalFont.ttf" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://bbnkkj6sus5o4" path="res://scenes/slime.tscn" id="10_vtaks"]
+[ext_resource type="Script" uid="uid://cue2ulpd4sqg7" path="res://scripts/tela_sucesso.gd" id="11_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ssvqc"]
 texture = ExtResource("4_dinhu")
@@ -427,13 +428,50 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("10_kvpfn")
 theme_override_font_sizes/font_size = 70
-text = "YOU DIED"
+text = "VOCÊ MORREU"
 
 [node name="Button" type="Button" parent="TelaMorte/CenterContainer/VBoxContainer" unique_id=1039245035]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("10_kvpfn")
 theme_override_font_sizes/font_size = 40
 text = "Restart"
+
+[node name="TelaSucesso" type="CanvasLayer" parent="." unique_id=1280189788]
+visible = false
+script = ExtResource("11_kvuet")
+
+[node name="ColorRect" type="ColorRect" parent="TelaSucesso" unique_id=271660338]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="TelaSucesso" unique_id=1362749884]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TelaSucesso/CenterContainer" unique_id=1185369588]
+layout_mode = 2
+
+[node name="titulo" type="Label" parent="TelaSucesso/CenterContainer/VBoxContainer" unique_id=729169997]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("10_kvpfn")
+theme_override_font_sizes/font_size = 70
+text = "Parabéns! Você matou 
+todos os inimigos!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="TelaSucesso/CenterContainer/VBoxContainer" unique_id=264297226]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_kvpfn")
+theme_override_font_sizes/font_size = 40
+text = "Refazer"
 
 [node name="Player" parent="." unique_id=1632118775 instance=ExtResource("1_uwrxv")]
 
@@ -451,39 +489,40 @@ theme_override_font_sizes/font_size = 18
 text = "Pontos:  0"
 horizontal_alignment = 1
 
-[node name="Slimes" type="Node" parent="." unique_id=61383484]
+[node name="Slimes" type="Node" parent="." unique_id=224028890]
 
-[node name="Slime" parent="Slimes" unique_id=317092685 instance=ExtResource("10_vtaks")]
-position = Vector2(123, 10)
+[node name="Slime" parent="Slimes" unique_id=1699978530 instance=ExtResource("10_vtaks")]
+position = Vector2(126, 4)
 
-[node name="Slime2" parent="Slimes" unique_id=901734846 instance=ExtResource("10_vtaks")]
-position = Vector2(0, -144)
+[node name="Slime2" parent="Slimes" unique_id=894935716 instance=ExtResource("10_vtaks")]
+position = Vector2(12, 236)
 
-[node name="Slime3" parent="Slimes" unique_id=1699978530 instance=ExtResource("10_vtaks")]
-position = Vector2(11, -284)
+[node name="Slime3" parent="Slimes" unique_id=924520708 instance=ExtResource("10_vtaks")]
+position = Vector2(386, -229)
 
-[node name="Slime4" parent="Slimes" unique_id=585052443 instance=ExtResource("10_vtaks")]
-position = Vector2(-160, 0)
+[node name="Slime4" parent="Slimes" unique_id=1618248165 instance=ExtResource("10_vtaks")]
+position = Vector2(-434, -10)
 
-[node name="Slime5" parent="Slimes" unique_id=302205203 instance=ExtResource("10_vtaks")]
-position = Vector2(-444, 81)
+[node name="Slime5" parent="Slimes" unique_id=1364531831 instance=ExtResource("10_vtaks")]
+position = Vector2(-205, 152)
 
-[node name="Slime6" parent="Slimes" unique_id=1180469904 instance=ExtResource("10_vtaks")]
-position = Vector2(292, 16)
+[node name="Slime6" parent="Slimes" unique_id=1995405532 instance=ExtResource("10_vtaks")]
+position = Vector2(-363, -279)
 
-[node name="Slime8" parent="Slimes" unique_id=1969105609 instance=ExtResource("10_vtaks")]
-position = Vector2(-96, 272)
+[node name="Slime7" parent="Slimes" unique_id=1043962731 instance=ExtResource("10_vtaks")]
+position = Vector2(3, -291)
 
-[node name="Slime9" parent="Slimes" unique_id=77625012 instance=ExtResource("10_vtaks")]
-position = Vector2(144, 320)
+[node name="Slime8" parent="Slimes" unique_id=1762557523 instance=ExtResource("10_vtaks")]
+position = Vector2(462, -28)
 
-[node name="Slime10" parent="Slimes" unique_id=138800719 instance=ExtResource("10_vtaks")]
-position = Vector2(-365, -284)
+[node name="Slime9" parent="Slimes" unique_id=1054160053 instance=ExtResource("10_vtaks")]
+position = Vector2(-395, 289)
 
-[node name="Slime7" parent="Slimes" unique_id=1470323303 instance=ExtResource("10_vtaks")]
-position = Vector2(-347, 289)
+[node name="Slime10" parent="Slimes" unique_id=1039018306 instance=ExtResource("10_vtaks")]
+position = Vector2(-179, -84)
 
-[node name="Slime11" parent="Slimes" unique_id=1672672669 instance=ExtResource("10_vtaks")]
-position = Vector2(338, -244)
+[node name="Slime11" parent="Slimes" unique_id=2076545601 instance=ExtResource("10_vtaks")]
+position = Vector2(194, -176)
 
 [connection signal="pressed" from="TelaMorte/CenterContainer/VBoxContainer/Button" to="TelaMorte" method="_on_button_pressed"]
+[connection signal="pressed" from="TelaSucesso/CenterContainer/VBoxContainer/Button" to="TelaMorte" method="_on_button_pressed"]

@@ -11,6 +11,3 @@ func update_health_player(new_health: int) -> void:
 	health_player.region_rect = Rect2(
 		0, 0, new_width, default_height
 	)
-
-	print("Vida recebida: ", new_health)
-	print("Largura da barra: ", new_width)
