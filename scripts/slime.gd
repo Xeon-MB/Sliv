@@ -7,7 +7,7 @@ var healthy: int = 100
 const KNOCKBACK_FORCE: int = 170
 var inimigos_mortos: int = 0
 var knockback_velocity: Vector2 = Vector2.ZERO
-var strenght: int = 4
+var strenght: int = 4.5
 var target_in_range: bool = false
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
