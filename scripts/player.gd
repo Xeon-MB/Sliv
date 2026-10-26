@@ -8,7 +8,7 @@ var last_direction := Vector2.DOWN
 var strenght: int = 20
 var inimigos_mortos: int = 0
 var max_healt: int = 100
-var healt: int = 100 
+var health: int = 100 
 var morto: bool = false
 var sucesso: bool = false
 var total_slimes: int = 0
@@ -114,10 +114,10 @@ func leva_dano(damage: int) -> void:
 	if morto: 
 		return
 	
-	healt -= damage
-	health_bar_player.update_health_player(healt)
+	health -= damage
+	health_bar_player.update_health_player(health)
 	
-	if healt <= 0:
+	if health <= 0:
 		morre()
 
 func morre() -> void:

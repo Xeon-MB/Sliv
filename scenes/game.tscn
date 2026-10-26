@@ -38,7 +38,6 @@ texture = ExtResource("2_vtaks")
 2:5/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kvpfn"]
-load_path = "res://.godot/imported/Oak_Tree.png-678f7f4178cdd9ad0fd1c0b2c40f7caf.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kice"]
 texture = SubResource("CompressedTexture2D_kvpfn")
@@ -66,7 +65,6 @@ texture = SubResource("CompressedTexture2D_kvpfn")
 3:0/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dinhu"]
-load_path = "res://.godot/imported/Oak_Tree_Small.png-fdf2c34673eb685f3eb881fca9049ef2.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5newe"]
 texture = SubResource("CompressedTexture2D_dinhu")
@@ -86,7 +84,6 @@ texture = SubResource("CompressedTexture2D_dinhu")
 3:2/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kvuet"]
-load_path = "res://.godot/imported/Outdoor_Decor_Free.png-e3b69ea25038bc740404a2e38014a36e.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_37s47"]
 texture = SubResource("CompressedTexture2D_kvuet")
@@ -507,22 +504,19 @@ horizontal_alignment = 1
 position = Vector2(317, 371)
 
 [node name="Slime" parent="Slimes" unique_id=142696677 instance=ExtResource("10_vtaks")]
-position = Vector2(126, 4)
+position = Vector2(170, -60)
 
 [node name="Slime2" parent="Slimes" unique_id=894935716 instance=ExtResource("10_vtaks")]
-position = Vector2(12, 236)
+position = Vector2(149, 162)
 
 [node name="Slime3" parent="Slimes" unique_id=924520708 instance=ExtResource("10_vtaks")]
 position = Vector2(386, -229)
 
 [node name="Slime4" parent="Slimes" unique_id=1618248165 instance=ExtResource("10_vtaks")]
-position = Vector2(-434, -10)
-
-[node name="Slime5" parent="Slimes" unique_id=1364531831 instance=ExtResource("10_vtaks")]
-position = Vector2(-205, 152)
+position = Vector2(-440, 68)
 
 [node name="Slime6" parent="Slimes" unique_id=1995405532 instance=ExtResource("10_vtaks")]
-position = Vector2(-363, -279)
+position = Vector2(-332, -190)
 
 [node name="Slime7" parent="Slimes" unique_id=1043962731 instance=ExtResource("10_vtaks")]
 position = Vector2(3, -291)
@@ -534,10 +528,7 @@ position = Vector2(462, -28)
 position = Vector2(-395, 289)
 
 [node name="Slime10" parent="Slimes" unique_id=1039018306 instance=ExtResource("10_vtaks")]
-position = Vector2(-179, -84)
-
-[node name="Slime11" parent="Slimes" unique_id=2076545601 instance=ExtResource("10_vtaks")]
-position = Vector2(194, -176)
+position = Vector2(-179, 163)
 
 [connection signal="pressed" from="TelaMorte/CenterContainer/VBoxContainer/Button" to="TelaMorte" method="_on_button_pressed"]
 [connection signal="pressed" from="TelaSucesso/CenterContainer/VBoxContainer/Button" to="TelaMorte" method="_on_button_pressed"]
