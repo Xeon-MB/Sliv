@@ -22,7 +22,6 @@ O jogador precisa enfrentar slimes usando uma espada, administrar sua vida e der
 
 ## 🚀 Como executar
 
-1. Baixe ou clone este repositório.
-2. Abra o Godot Engine.
-3. Importe o projeto pelo arquivo `project.godot`.
-4. Execute o jogo.
+1. Acesse Releases
+2. Abaixe "Sliv.exe"
+3. Inicie o executável
