@@ -456,7 +456,7 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_ebum8")
 
 [node name="HealthBarPlayer" type="Node2D" parent="." unique_id=264773228]
-position = Vector2(-9, -15)
+position = Vector2(-9, -17)
 script = ExtResource("4_tuyoq")
 metadata/_edit_group_ = true
 
