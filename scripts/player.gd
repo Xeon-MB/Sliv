@@ -97,13 +97,13 @@ func update_hitbox_offset() -> void:
 	
 	match last_direction:
 		Vector2.LEFT:
-			hitbox.position = Vector2(-x, y)
+			hitbox.position = Vector2(-9, 0)
 		Vector2.RIGHT:
-			hitbox.position = Vector2(x, y)
+			hitbox.position = Vector2(12, 0)
 		Vector2.UP:
-			hitbox.position = Vector2(y, -x)
+			hitbox.position = Vector2(0, -14)
 		Vector2.DOWN:
-			hitbox.position = Vector2(-y , x)
+			hitbox.position = Vector2(0 , 6)
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
