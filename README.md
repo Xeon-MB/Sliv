@@ -25,3 +25,8 @@ O jogador precisa enfrentar slimes usando uma espada, administrar sua vida e der
 1. Acesse Releases
 2. Abaixe "Sliv.exe"
 3. Inicie o executável
+
+## 🛠️ Como jogar?
+
+1. W A S D e setinhas andam
+2. Espaço e Botão Esquerdo do Mouse ataca
